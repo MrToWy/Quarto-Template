@@ -1,0 +1,161 @@
+---
+title: "Title"
+subtitle: "Subtitle"
+date: now
+date-format: "D. MMMM YYYY"
+format:
+  revealjs:
+    multiplex: true
+    header: Header Text
+    slide-number: true
+    chalkboard:
+      buttons: false
+    preview-links: auto
+    logo: images/hsh.svg
+    css: styles.css
+    footer: Author Name
+    theme: serif
+    template-partials:
+        - title-slide.html
+    include-in-header:
+      - text: |
+          <script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js""></script>
+          <script type="text/javascript">
+            $(document).ready(function() {
+              $('body').prepend('<div class=\"zoomDiv\"><img src=\"\" class=\"zoomImg\"></div>');
+              // onClick function for all plots (img's)
+              $('img:not(.zoomImg)').click(function() {
+                $('.zoomImg').attr('src', $(this).attr('src')).css({width: '100%'});
+                $('.zoomDiv').css({opacity: '1', width: 'auto', border: '1px solid white', borderRadius: '5px', position: 'fixed', top: '50%', left: '50%', marginRight: '-50%', transform: 'translate(-50%, -50%)', boxShadow: '0px 0px 50px #888888', zIndex: '50', overflow: 'auto', maxHeight: '100%'});
+              });
+              // onClick function for zoomImg
+              $('img.zoomImg').click(function() {
+                $('.zoomDiv').css({opacity: '0', width: '0%'});
+              });
+            });
+          </script>
+revealjs-plugins:
+  - attribution
+resources:
+  - demo.pdf
+filters:
+  - reveal-header
+
+---
+
+# First Slide  
+- 1: Write code that works on your machine
+- 2: Break everything on someone else’s machine
+- 3: Blame the compiler. 
+
+
+## You can change the header
+::: header
+Tabs vs. Spaces: The Eternal Battle
+:::
+
+::: {.columns}
+
+::: {.column width="50%"}
+Left Column: Where all the good code lives.  
+// TODO: Refactor this mess later.
+:::
+
+::: {.column width="50%"}
+Right Column: Definitely not full of commented-out hacks.  
+/* If you're reading this, no you’re not. */
+:::
+
+:::
+
+::: notes
+Hidden from the viewer, but shown in speaker-view (press 's' to open)
+:::
+
+
+## Automatic incremental slides
+::: {.incremental}
+- Press `Space` to see the next point
+- Press `Space` again to see the next point
+- Good job!
+:::
+
+## Manual incremental slides
+
+Is there anything else on this slide?
+
+::: {.fragment}
+Yes there is! <br>
+:o 
+:::
+
+::: {.fragment}
+Surprised?
+:::
+
+
+## Code with highlighted lines {auto-animate="true" visibility="uncounted"}
+```prisma {code-line-numbers="4-5,8-10"}
+model Module {
+ id Int @id @default(autoincrement())
+ credits             Int
+ degreeProgram       DegreeProgram @relation(fields: [degreeProgramId], references: [id])
+ degreeProgramId     Int
+...
+
+model DegreeProgram {
+  id                 Int           @id @default(autoincrement())
+  modules            Module[]
+...
+``` 
+
+## Growing / animated code {auto-animate="true"}
+```ts {code-line-numbers="3|4-6|1-2"}
+@ApiTags('Degrees')
+@Controller('degrees')
+export class DegreeController {
+  constructor(
+    private degreeService: DegreeService
+  ) {}
+```
+## Growing / animated code  {auto-animate="true" visibility="uncounted"}
+```ts {code-line-numbers="8-10"}
+@ApiTags('Degrees')
+@Controller('degrees')
+export class DegreeController {
+  constructor(
+    private degreeService: DegreeService
+  ) {}
+
+  @Get(':id')
+  findOne(@Param('id') id: string, @Req() request: Request): Promise<any> {
+  }
+}
+```
+
+
+## Tables
+<br>
+
+|                  | Bootstrap  | PrimeNG  |
+|------------------|--------|--------|
+| Weekly Downloads | 424,283   | 355,443   |
+| ...              | ...   | ...   |
+| Component count  | ~25   | ~100   |
+
+
+
+
+## Mermaid Diagrams
+
+```{mermaid}
+pie title When you forget someones name
+    "Wait until someone else says the name" : 80
+    "Guess their name wrong" : 15
+    "Guess their name right" : 4
+    "Ask for the name" : 1
+```
+
+
+## Uncounted slide {visibility="uncounted"}
+![](images/screenshot.jpg)
