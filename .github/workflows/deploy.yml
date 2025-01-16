@@ -29,7 +29,7 @@ jobs:
       - name: Render Quarto Project
         uses: quarto-dev/quarto-actions/render@v2
         with:
-          path: index.qmd # By default, the current working dir is used i.e `quarto render .`
+          path: slides.qmd # By default, the current working dir is used i.e `quarto render .`
 
       - name: Print Folder Tree
         uses: jaywcjlove/github-action-folder-tree@main

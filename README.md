@@ -16,7 +16,7 @@
 
   [1]: create_new_repo.png
   
-3. Edit [index.qmd](index.qmd) to your needs
+3. Edit [slides.qmd](slides.qmd) to your needs
 
 
 # Install Quarto
