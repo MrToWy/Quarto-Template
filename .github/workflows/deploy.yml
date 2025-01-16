@@ -31,12 +31,9 @@ jobs:
         with:
           path: slides.qmd # By default, the current working dir is used i.e `quarto render .`
 
-      - name: Print Folder Tree
-        uses: jaywcjlove/github-action-folder-tree@main
-        with:
-          exclude: "node_modules|.git|.husky"
-          path: /home/runner/work/MarkdownSlideCompare/MarkdownSlideCompare
-          depth: 4
+        # Rename slides.html to index.html
+      - name: Rename slides.html to index.html
+        run: mv slides.html index.html
 
       # Upload the index.html and revealMD directory
       - uses: actions/upload-pages-artifact@v2
