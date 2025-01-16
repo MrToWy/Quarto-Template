@@ -30,7 +30,11 @@ filters:
 # First Slide  
 - 1: Write code that works on your machine
 - 2: Break everything on someone else’s machine
-- 3: Blame the compiler. 
+- 3: Blame the compiler.
+
+::: {.attribution}
+Source: [GitHub.com](https://github.com/MrToWy/Quarto-Template)
+::: 
 
 
 ## You can change the header
