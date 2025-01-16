@@ -35,6 +35,6 @@ quarto preview .\slides.qmd
 ```
 
 ## Open Speaker View
-change to /index-speaker.html (e.g. https://mrtowy.github.io/BachelorKolloquium/index-speaker.html)
+change to /index-speaker.html (e.g. https://mrtowy.github.io/BachelorKolloquium/slides-speaker.html)
 
 -> Speaker View gets synchronized to normal views
