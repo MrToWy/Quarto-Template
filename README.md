@@ -12,9 +12,9 @@
 
 2. Enable GitHub Pages in your repository settings
 
-   > [![Create new Repo][1]][1]
+   > [![Create new Repo][2]][2]
 
-  [1]: create_new_repo.png
+  [2]: create_new_repo.png
   
 3. Edit [slides.qmd](slides.qmd) to your needs
 
