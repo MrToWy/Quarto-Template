@@ -36,8 +36,8 @@ jobs:
         run: mv slides.html index.html
 
       # Upload the index.html and revealMD directory
-      - uses: actions/upload-pages-artifact@v2
+      - uses: actions/upload-pages-artifact@v3
         with:
           path: .
       - id: deployment
-        uses: actions/deploy-pages@v2
+        uses: actions/deploy-pages@v4
